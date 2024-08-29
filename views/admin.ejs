@@ -1,0 +1,64 @@
+<%- include("./partials/header") -%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin panel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="row">
+          <form class="form-inline d-flex" action="/admin/search" method="post">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+            <input class="btn btn-outline-success my-2 my-sm-0 ms-2" type="submit" value="Search">
+           
+          </form>
+        </div>
+        </ul>
+        <form action="admin/logout" method="post">
+            <button class="btn btn-danger"  >log out</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+ <h1 class="text-center">Dashboard</h1>
+ <div class="container-fluid w-60 ">
+ <table class="table  ">
+<thead>
+    <tr class="">
+      <th>id</th>
+        <th>email</th>
+        <th>username</th>
+        <th> <a href="/admin/add"><button type="button" class="btn btn-dark me-5"><i class="bi bi-plus-circle-dotted"></i>Add User</button></a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% user.forEach(val => { %>
+      
+    <tr class="">
+      <td><%= val._id %> </td>
+        <td><%= val.email %></td>
+         <td><%= val.name %></td>
+        
+         <td class="">
+          <div class="d-flex flex-row">
+          <a href="/admin/view/<%=val._id  %>"><button type="button" class="btn btn-primary ms-2"><i class="bi bi-eye"></i></button></a>
+          <a href="/admin/edit/<%=val._id  %>">  <button type="button" class="btn btn-warning ms-2"><i class="bi bi-pencil-square"></i></button></a>
+        
+          <form action="/admin/delete/<%= val._id %>?_method=DELETE" method="post" ><button type="submit" class="btn btn-danger ms-2"><i class="bi bi-trash"></i></button></form> 
+        </div>
+        </td> 
+     
+       </tr>
+    
+      
+      
+ 
+    <% }); %>
+  </tbody>
+ </table>
+</div>
+
+ 
+ <%- include("./partials/footer") -%>

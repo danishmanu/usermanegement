@@ -1,0 +1,47 @@
+<%- include("./partials/header") -%>
+<!-- <div class="d-flex justify-content-center" style="width: 500px;">
+<table class="table table-bordered ">
+   
+    </tbody>
+  </table>
+</div> -->
+<div class="mt-3 ms-2">   <a href="/admin">  <button type="button" class="btn btn-danger ms-2 "><i class="bi bi-arrow-left-circle me-2"></i>back</button></a></div>
+<div class="d-flex justify-content-center"style="margin-top: 120px;">
+    <table class="table table-bordered"style="width: 500px;">
+        <thead>
+            <tr>
+              <th class="text-center" colspan="2" scope="col">User Information</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th scope="row">ID</th>
+                  <td ><%=user._id%></td>
+               
+                </tr>
+              <tr>
+                  <th scope="row">Username</th>
+                  <td ><%=user.name%></td>
+               
+                </tr>
+            <tr>
+              <th scope="row">First Name:</th>
+              <td><%=user.fname%></td>
+            </tr>
+            <tr>
+              <th scope="row">Last Name:</th>
+              <td><%=user.lname%></td>
+            </tr>
+            <tr>
+              <th scope="row">Email</th>
+              <td ><%=user.email%></td>
+           
+            </tr>
+         
+    </table>
+   
+  </div>
+ 
+
+<%- include("./partials/footer") -%>

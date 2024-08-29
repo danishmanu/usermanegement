@@ -1,0 +1,37 @@
+<%- include("./partials/header") -%>
+<div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+
+     <div class="form-group  bg-dark text-light p-5" style="border-radius: 30px; width: 300px;">
+
+         <form action="/admin/add" method="post" >
+             <div class=" d-flex justify-content-center ">
+             <h3>Add new User</h3>
+            
+           
+         </div>
+             
+             <label class="text-start mt-2" for="">Email</label>
+             <input type="email" name="email" class="form-control p-0" id="" value="" style="font-size: 17px;" placeholder="email"required>
+             <label class="text-start mt-2" for="">First name</label>
+             <input type="text" name="fname" class="form-control p-0 " id="" value="" style="font-size: 17px;" placeholder="first name"required>
+             <label class="text-start mt-2" for="">Last name</label>
+             <input type="text" name="lname" class="form-control p-0 " id="" value="" style="font-size: 17px;" placeholder=" last name"required>
+            
+             <label for="">username</label>
+             <input type="text" name="username" class="form-control p-0 " id="" value="" style="font-size: 17px;" placeholder="username" required>
+             <label class="text-start mt-2" for="">password</label>
+             <input type="password" name="password" class="form-control p-0  " id="" value="" style="font-size: 17px;" placeholder="password"required>
+            
+             <p class="text text-danger"><%=locals.msg ? msg:null %></p>
+             <div class=" d-flex justify-content-center align-items-center mt-2">
+
+             <input    type="submit" class="btn btn-primary text-center px-4  mt-3 " style="border-radius: 10px;" value="submit" >
+         </div>
+      
+         </form>
+     </div>
+
+</div>
+<%- include("./partials/footer") -%>
+ 
+ 
